@@ -38,15 +38,16 @@ function myPower(x, n) {
 function getFirstNotRepeating(str) {
 
   let arr = str.split("");
-  let sec = [];
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j <= sec.length; j ++) {
-      if (arr[i] !== sec[i]) {
-        return arr[i];
-      } else {
-        sec.push(arr[i]);
-      }
+  let count = arr.length;
+  let dup;
+  while (count > 0) {
+    dup = arr.shift();
+    if (!arr.includes(dup)) {
+      console.log(dup);
+      return dup;
     }
+    arr.push(dup);
+    count--;
   }
 }
 
@@ -57,7 +58,7 @@ function isPrefectNumber(num) {
 }
 
  //*** Playground ***
- console.log(allCaps("the cat is my"));
+ console.log(getFirstNotRepeating("jjshylmhys"));
   //*** End of Playground ***
 
 // Don't touch me :)
