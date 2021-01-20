@@ -16,20 +16,29 @@ function allCombinations(str) {
 
 //Question 3
 function allCaps(str) {
-  // your code here
-  return "";
+  let cap = str.split(" ").toUpperCase().join(" ");
+  return cap;
 }
 
 //Question 4
 function myPower(x, n) {
-  // your code here
-  return "";
+  
+  return x**n;
 }
 
 //Question 5
 function getFirstNotRepeating(str) {
-  // your code here
-  return "";
+
+  let arr = str.split("");
+  let sec = [];
+  for (let i = 0; i < arr.length; i++) {
+    if ( !sec.includes(arr[i]) ) {
+      sec.push(arr[i]);
+    } else {
+      return arr[i];
+    }
+  }
+  return "all the letters repeat";
 }
 
 //Question 6 (Bonus)
@@ -38,10 +47,9 @@ function isPrefectNumber(num) {
   return "I'm not interested in the bonus question :(";
 }
 
- *** Playground ***
-// Feel free to run and test your code here on your own
-
- *** End of Playground ***
+ //*** Playground ***
+ console.log(myPower(7,4));
+  //*** End of Playground ***
 
 // Don't touch me :)
 exports.myReverse = myReverse;
