@@ -7,8 +7,25 @@ function myReverse(str) {
 
 //Question 2
 function allCombinations(str) {
+
   let combinations = [];
-  
+  let arr = str.split("");
+  let count = 0, letter;
+  for (let i = 0; i <= arr.length; i++) {
+    for (let j = 0; j <= arr.length; j++) {
+      combinations.push(str.slice(i,j));
+      count++;
+    }
+  }
+  while (count > 0){
+    letter = combinations[0];
+    combinations.shift();
+    if (letter !== "") {
+      combinations.push(letter);
+  }
+  count--;
+}
+  console.log(combinations);
   return combinations;
 }
 
@@ -58,7 +75,7 @@ function isPrefectNumber(num) {
 }
 
  //*** Playground ***
- console.log(getFirstNotRepeating("jjshylmhys"));
+ console.log(allCombinations("dog"));
   //*** End of Playground ***
 
 // Don't touch me :)
