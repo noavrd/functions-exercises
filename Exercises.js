@@ -1,7 +1,8 @@
 //Question 1
 function myReverse(str) {
-  // your code here
-  return "";
+  
+  let arr = str.split("").reverse().join("");
+  return arr;
 }
 
 //Question 2
@@ -37,10 +38,10 @@ function isPrefectNumber(num) {
   return "I'm not interested in the bonus question :(";
 }
 
-// *** Playground ***
+ *** Playground ***
 // Feel free to run and test your code here on your own
 
-// *** End of Playground ***
+ *** End of Playground ***
 
 // Don't touch me :)
 exports.myReverse = myReverse;
