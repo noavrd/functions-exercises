@@ -8,21 +8,29 @@ function myReverse(str) {
 //Question 2
 function allCombinations(str) {
   let combinations = [];
-  // your code here
-
-  //
+  
   return combinations;
 }
 
 //Question 3
 function allCaps(str) {
-  let cap = str.split(" ").toUpperCase().join(" ");
-  return cap;
+  let cap = str.split(" ");
+  let sec = [];
+  let upper;
+  
+  for (let i = 0; i < cap.length; i++){
+    sec = cap[i].split("");
+    upper = sec[0].toUpperCase();
+    sec[0] = upper;
+    cap[i] = sec.join("");
+  }
+  str = cap.join(" ");
+  return str;
 }
 
 //Question 4
 function myPower(x, n) {
-  
+
   return x**n;
 }
 
@@ -32,13 +40,14 @@ function getFirstNotRepeating(str) {
   let arr = str.split("");
   let sec = [];
   for (let i = 0; i < arr.length; i++) {
-    if ( !sec.includes(arr[i]) ) {
-      sec.push(arr[i]);
-    } else {
-      return arr[i];
+    for (let j = 0; j <= sec.length; j ++) {
+      if (arr[i] !== sec[i]) {
+        return arr[i];
+      } else {
+        sec.push(arr[i]);
+      }
     }
   }
-  return "all the letters repeat";
 }
 
 //Question 6 (Bonus)
@@ -48,7 +57,7 @@ function isPrefectNumber(num) {
 }
 
  //*** Playground ***
- console.log(myPower(7,4));
+ console.log(allCaps("the cat is my"));
   //*** End of Playground ***
 
 // Don't touch me :)
